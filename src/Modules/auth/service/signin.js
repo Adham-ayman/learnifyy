@@ -21,7 +21,7 @@ export const login = asynchandler(async (req, res, next) => {
     hashedvalue: user.password,
   });
   if (!Match) {
-    return next(new Error("Incorrect password", { cause: 404 }));
+    return next(new Error("Incorrect password", { cause: 404 }));                                 
   }
   if (!user.isActive) {
     user.isActive = true;

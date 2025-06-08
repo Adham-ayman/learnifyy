@@ -129,7 +129,7 @@ export const createCheckoutSession = asynchandler(async (req, res, next) => {
     customer_email: req.user.email,
     line_items,
     metadata,
-    couponCode: couponCode || null, // 👈 pass couponCode here
+    couponCode: couponCode || null, 
   });
   return sucessResponse({ res, data: { url: session.url }, status: 201 });
 });

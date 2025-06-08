@@ -91,7 +91,6 @@ const formatRoadmap = (aiResponse) => {
   };
 };
 
-// Generate a customized roadmap with default image
 export const generateCustomizedRoadmap = asynchandler(async (req, res, next) => {
   const { customizedCategory, description } = req.body;
   const userId = req.user._id;

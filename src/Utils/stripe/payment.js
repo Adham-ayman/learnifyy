@@ -20,7 +20,7 @@ export const checkOutSession = async ({
   success_url = process.env.SUCCESS_URL,
   metadata = {},
   line_items,
-  couponCode = null, // 👈 still supporting couponCode
+  couponCode = null,
 }) => {
   try {
     const sessionOptions = {

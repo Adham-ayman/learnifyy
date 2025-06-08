@@ -49,7 +49,6 @@ courseRouter.put(
       { name: "image", maxCount: 1 },
       { name: "introVideo", maxCount: 1 },
     ]),
-    validation(validators.updateCourse),
     courseService.updateCourse
   );
 

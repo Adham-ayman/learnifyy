@@ -34,15 +34,12 @@ export const bootstrap = async (express, app) => {
     credentials: true, // Allow credentials (cookies, authorization headers)
   };
   
-  // Apply the CORS middleware
   app.use(cors(corsOptions));
   app.post('/checkout/webhook', express.raw({ type: 'application/json' }), stripeWebhookHandler);
   app.use(express.json());
   app.use(cookieParser());
   app.use("/uploads", express.static(path.resolve("./src/Uploads")));
   EventEmitter.defaultMaxListeners = 30;
-
-//   app.use('/graphql',createHandler({schema}))
   app.use("/auth", authRouter);
   app.use("/user", userRouter);
   app.use("/course", courseRouter);
